@@ -1,30 +1,35 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image,  StyleSheet,  Text, View } from "react-native";
 
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-
-export default function HomeScreen() {
+export default function Index() {
   return (
-   s
+    <View
+      style={{
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <Image source={require("../../assets/images/react-logo.png")} style={styles.logo}/>
+      <Text style={styles.textstyle}>Hello World!!</Text>
+      <Text style={styles.subtext}>My First React Native Cross Platform App</Text>
+    </View>
+  );
 }
 
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
+const styles= StyleSheet.create({
+  logo:{
+    width:200,
+    height:200,
+    borderWidth:2,
+    borderStyle:"dotted"
   },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+  textstyle:{
+    fontFamily:"Times New Roman",
+    fontSize: 45,
+    color: 'white'
   },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
+  subtext:{
+    fontWeight:500,
+    color: 'white'
+  }
+})
